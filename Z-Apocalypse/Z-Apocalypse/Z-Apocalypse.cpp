@@ -10,10 +10,10 @@ void intro()
 << endl;
 }
 
-int firstAction()
+int prepare()
 {
     cout << "What is Your first course of action?" << endl;
-    cout << "Opt.1 charge the batteries and fill your bottles up with water" << endl;
+    cout << "Opt.1 Charge the batteries and fill your bottles up with water" << endl;
     cout << "Opt.2 Make weapons" << endl;
     cout << "Opt.3 Study the zombies and their behaviour" << endl;
     cout << "Opt.4 Stock up on food, water, and drinks" << endl;
@@ -21,20 +21,36 @@ int firstAction()
     cout << "Enter your choice: ";
     int choice;
     cin >> choice;
+    
+    cout << "You have chosen: " << choice << endl;
+    return choice;
+}
+
+int selfDefence()
+{
+    cout << "What is the best way to defend yourself?" << endl;
+    cout << "Opt.1 Baseball bat" << endl;
+    cout << "Opt.2 Kitchen knife" << endl;
+    cout << "Opt.3 Sword" << endl;
+    cout << "Opt.4 Chainsaw" << endl;
+
+    cout << "Enter your choice of weapon: ";
+    int choice;
+    cin >> choice;
 
     cout << "You have chosen: " << choice << endl;
     return choice;
 }
 
-int secondAction()
+int landTransportation()
 {
-    cout << "What is the safest way to travel?" << endl;
+    cout << "How do You want to travel to the port?" << endl;
     cout << "Opt.1 Car" << endl;
-    cout << "Opt.2 Plane" << endl;
+    cout << "Opt.2 Minivan" << endl;
     cout << "Opt.3 By walk" << endl;
-    cout << "opt.4 Bike" << endl;
+    cout << "Opt.4 Bike" << endl;
 
-    cout << "Enter your second choice: ";
+    cout << "Enter your choice of transportation: ";
     int choice;
     cin >> choice;
 
@@ -46,12 +62,28 @@ int main()
 {
     intro();
 
-    firstAction();
+    int prepareChoice = prepare();
+
+    int selfDefenceChoice = selfDefence();
     
+    int landTransportaionChoice = landTransportation();
+ 
+    /* int seaTransportation ()
+  {
+  cout << "How do you want to travel the sea?" << endl:
+  }
+  */
     
-    secondAction();
-  
-    //wait for user to press a key
+  //wait for user to press a key
+    if (prepareChoice == 3 && selfDefenceChoice == 4 && landTransportaionChoice == 1)
+    {
+        cout << "You have reached the port." << endl;
+    }
+    else
+    {
+
+        cout << "You died while going to the port." << endl;
+    }
     char k;
     cin >> k;
 }
